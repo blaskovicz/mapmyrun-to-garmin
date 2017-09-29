@@ -1,0 +1,163 @@
+{
+	"ImportPath": "github.com/blaskovicz/mapmyrun-to-garmin",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/blaskovicz/go-underarmour",
+			"Rev": "93b22eb479e3c7db57c1b583a2593acdc5531bdd"
+		},
+		{
+			"ImportPath": "github.com/blaskovicz/go-underarmour/models",
+			"Rev": "93b22eb479e3c7db57c1b583a2593acdc5531bdd"
+		},
+		{
+			"ImportPath": "github.com/erikstmartin/go-testdb",
+			"Rev": "8d10e4a1bae52cd8b81ffdec3445890d6dccab3d"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Comment": "v1.1-7-g08b5f42",
+			"Rev": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+		},
+		{
+			"ImportPath": "github.com/gorilla/csrf",
+			"Comment": "v1.5-7-g8aae08f",
+			"Rev": "8aae08ff9fb9a8fe293deea3d057f37d89744670"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.5.0-1-g3f19343",
+			"Rev": "3f19343c7d9ce75569b952758bd236af94956061"
+		},
+		{
+			"ImportPath": "github.com/gorilla/securecookie",
+			"Comment": "v1.1-6-ge59506c",
+			"Rev": "e59506cc896acb7f7bf732d4fdf5e25f7ccd8983"
+		},
+		{
+			"ImportPath": "github.com/gorilla/sessions",
+			"Comment": "v1.1-7-gb61c93c",
+			"Rev": "b61c93cb7f67533c8bfbb5ea450efc07e5833c5e"
+		},
+		{
+			"ImportPath": "github.com/kellydunn/golang-geo",
+			"Comment": "v0.7.0-4-g6f16b0c",
+			"Rev": "6f16b0ccf2a6ebd1a234daacfb6199510fbd0db4"
+		},
+		{
+			"ImportPath": "github.com/kylelemons/go-gypsy/yaml",
+			"Comment": "go.weekly.2011-11-02-21-g08cad36",
+			"Rev": "08cad365cd28a7fba23bb1e57aa43c5e18ad8bb8"
+		},
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Comment": "go1.0-cutoff-181-gb77235e",
+			"Rev": "b77235e3890a962fe8a6f8c4c7198679ca7814e7"
+		},
+		{
+			"ImportPath": "github.com/lib/pq/oid",
+			"Comment": "go1.0-cutoff-181-gb77235e",
+			"Rev": "b77235e3890a962fe8a6f8c4c7198679ca7814e7"
+		},
+		{
+			"ImportPath": "github.com/pkg/errors",
+			"Comment": "v0.8.0-6-g2b3a18b",
+			"Rev": "2b3a18b5f0fb6b4f9190549597d3f962c02bc5eb"
+		},
+		{
+			"ImportPath": "github.com/ptrv/go-gpx",
+			"Rev": "c93804873f99672c0c8f6af17b7b51f316074dc5"
+		},
+		{
+			"ImportPath": "github.com/ziutek/mymysql/godrv",
+			"Comment": "v1.5.4-25-g1d19cbf",
+			"Rev": "1d19cbf98d83564cc561192ae7d7183d795f7ac7"
+		},
+		{
+			"ImportPath": "github.com/ziutek/mymysql/mysql",
+			"Comment": "v1.5.4-25-g1d19cbf",
+			"Rev": "1d19cbf98d83564cc561192ae7d7183d795f7ac7"
+		},
+		{
+			"ImportPath": "github.com/ziutek/mymysql/native",
+			"Comment": "v1.5.4-25-g1d19cbf",
+			"Rev": "1d19cbf98d83564cc561192ae7d7183d795f7ac7"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html",
+			"Rev": "0744d001aa8470aaa53df28d32e5ceeb8af9bd70"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html/atom",
+			"Rev": "0744d001aa8470aaa53df28d32e5ceeb8af9bd70"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html/charset",
+			"Rev": "0744d001aa8470aaa53df28d32e5ceeb8af9bd70"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/charmap",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/htmlindex",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/internal",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/internal/identifier",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/japanese",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/korean",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/simplifiedchinese",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/traditionalchinese",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/encoding/unicode",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/internal/tag",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/internal/utf8internal",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/language",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/runes",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		},
+		{
+			"ImportPath": "golang.org/x/text/transform",
+			"Rev": "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+		}
+	]
+}
