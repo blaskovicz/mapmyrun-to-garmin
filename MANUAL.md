@@ -24,5 +24,3 @@ $ ./mapmyrun-to-garmin --route=$routeID --underarmour-cookie-auth-token=$underAr
 
 **Congratulations**, you've uploaded your course to Garmin and/or your device!
 Please let me know if any corrections should be made to this article (pull requests and issues welcome).
-
-My future plan includes automating the binary execution via a website, so stay tuned to this repo!
