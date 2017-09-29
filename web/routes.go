@@ -220,6 +220,6 @@ func PostRouteForm(ss sessions.Store) http.HandlerFunc {
 		}
 
 		delete(session.Values, "mapmyrunID")
-		session.Values["flashSuccess"] = fmt.Sprintf("Successfully imported course https://connect.garmin.com/modern/course/%d '%s' into Garmin Connect from http://mapmyrun.com/routes/view/%d! Check it out!", *fullGarminCourse.ID, fullGarminCourse.Name, mapmyrunRouteID)
+		session.Values["flashSuccess"] = fmt.Sprintf("Successfully imported course https://connect.garmin.com/modern/course/%d '%s' into Garmin Connect from http://mapmyrun.com/routes/view/%d. Don't forget to send the course to your device via Garmin Connect!", *fullGarminCourse.ID, fullGarminCourse.Name, mapmyrunRouteID)
 	}
 }
