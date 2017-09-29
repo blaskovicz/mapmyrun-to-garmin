@@ -2,7 +2,9 @@
 
 Currently, routes can be exported from [MapMyRun](www.mapmyrun.com) in GPX format and then subsequently imported to [Garmin Connect](connect.garmin.com).
 
-Because this feature is unavailable in the UI, you can use this repo to assist!
+Note that you can now use mapmyrun-to-garmin.herokuapp.com (my website) to automatically convert routes.
+
+If you still would like to do it manually, read on...
 
 ## Steps
 

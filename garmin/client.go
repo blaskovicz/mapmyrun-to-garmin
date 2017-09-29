@@ -34,12 +34,30 @@ func New() *Client {
 	}
 	cookieSession := os.Getenv(envVarPrefix + "_COOKIE_SESSION")
 	cookiePinM := os.Getenv(envVarPrefix + "_COOKIE_PIN_M")
-	c := &Client{
-		rootURI: rootURI,
-	}
+	c := &Client{}
+	return c.SetRootURI(rootURI).SetCookieSession(cookieSession).SetCookiePinM(cookiePinM)
+}
+
+func (c *Client) SetCookieSession(cookieSession string) *Client {
 	c.cookie.session = cookieSession
+	return c
+}
+func (c *Client) SetCookiePinM(cookiePinM string) *Client {
 	c.cookie.pinM = cookiePinM
 	return c
+}
+func (c *Client) SetRootURI(rootURI string) *Client {
+	c.rootURI = rootURI
+	return c
+}
+func (c *Client) GetCookieSession() string {
+	return c.cookie.session
+}
+func (c *Client) GetCookiePinM() string {
+	return c.cookie.pinM
+}
+func (c *Client) GetRootURI() string {
+	return c.rootURI
 }
 
 func (c *Client) uri(path string, pathArgs ...interface{}) string {

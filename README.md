@@ -3,7 +3,8 @@
 
 ## Status
 
-Currently, there is no website yet, simply follow my [manual method](MANUAL.md) for exporting routes from
-MapMyRun and importing them into Garmin Connect.
+Visit mapmyrun-to-garmin.herokuapp.com to import MapMyRun routes to Garmin Connect!
+
+As always, you can still use the [manual method](MANUAL.md).
 
 Follow my repo for future updates!

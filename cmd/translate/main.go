@@ -15,7 +15,7 @@ func main() {
 	garminSession := flag.String("garmin-session", "", "Cookie: SESSION=<value>")
 	uaToken := flag.String("underarmour-cookie-auth-token", "", "Cookie: auth-token=<value>")
 	route := flag.Int("route", 0, "/routes/view/<value>")
-	file := flag.String("file", "", "outfile.gpx")
+	//file := flag.String("file", "", "outfile.gpx")
 	flag.Parse()
 	if uaToken != nil && *uaToken != "" {
 		os.Setenv("UNDERARMOUR_COOKIE_AUTH_TOKEN", *uaToken)
@@ -29,10 +29,11 @@ func main() {
 	if route == nil || *route <= 0 {
 		panic("invalid route provided")
 	}
-	if file == nil || *file == "" {
-		temp := fmt.Sprintf("./%d.gpx", *route)
-		file = &temp
-	}
+	/*
+		if file == nil || *file == "" {
+			temp := fmt.Sprintf("./%d.gpx", *route)
+			file = &temp
+		}*/
 	gclient := garmin.New()
 
 	// auth test
