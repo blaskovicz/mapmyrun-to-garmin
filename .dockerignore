@@ -1,0 +1,6 @@
+/.git
+/env.sample
+/mapmyrun-to-garmin*
+/Procfile
+/*.md
+/Makefile
