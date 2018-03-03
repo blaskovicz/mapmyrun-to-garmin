@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  web:
+    image: 127.0.0.1:5000/mapmyrun-to-garmin
+    build: .
+    ports:
+      - "3091:3091"
+    secrets:
+      - source: mapmyrun-to-garmin_cookie_key_v1
+        target: cookie_key
+      - source: mapmyrun-to-garmin_csrf_key_v1
+        target: csrf_key
+secrets:
+  mapmyrun-to-garmin_cookie_key_v1:
+    external: true
+  mapmyrun-to-garmin_csrf_key_v1:
+    external: true

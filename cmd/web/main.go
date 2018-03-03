@@ -1,10 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 
+	swarmed "github.com/blaskovicz/go-swarmed"
 	"github.com/blaskovicz/mapmyrun-to-garmin/web"
 	"github.com/gorilla/csrf"
 	"github.com/gorilla/mux"
@@ -12,6 +14,10 @@ import (
 )
 
 func main() {
+	err := swarmed.LoadSecrets()
+	if err != nil {
+		panic(fmt.Errorf("swarmed.LoadSecrets: %s", err))
+	}
 	env := os.Getenv("ENVIRONMENT")
 	var secureCSRF bool
 	if env == "production" {

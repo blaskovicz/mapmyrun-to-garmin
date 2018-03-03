@@ -1,11 +1,15 @@
 {
 	"ImportPath": "github.com/blaskovicz/mapmyrun-to-garmin",
-	"GoVersion": "go1.8",
+	"GoVersion": "go1.9",
 	"GodepVersion": "v79",
 	"Packages": [
 		"./..."
 	],
 	"Deps": [
+		{
+			"ImportPath": "github.com/blaskovicz/go-swarmed",
+			"Rev": "aab60b3f7f685e030aebf7004197d087221f546e"
+		},
 		{
 			"ImportPath": "github.com/blaskovicz/go-underarmour",
 			"Rev": "93b22eb479e3c7db57c1b583a2593acdc5531bdd"
