@@ -3,7 +3,7 @@
 
 ## Status
 
-Visit [https://mapmyrun-to-garmin.herokuapp.com](https://mapmyrun-to-garmin.herokuapp.com) to import MapMyRun routes to Garmin Connect!
+Visit [mapmyrun-to-garmin.carlyzach.com](https://mapmyrun-to-garmin.carlyzach.com) to import MapMyRun routes to Garmin Connect!
 
 As always, you can still use the [manual method](MANUAL.md).
 
