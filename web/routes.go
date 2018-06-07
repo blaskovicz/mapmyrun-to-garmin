@@ -53,22 +53,16 @@ var t = template.Must(template.New("route_form.tmpl").Parse(`
 			<div class="col-12">
 				<form method="POST" accept-charset="UTF-8">
 					<div class="form-group {{ if .garminSessionE }} has-danger {{ end }}">
-						<label for="garminSession" class="bold">Garmin <code>SESSION</code> Cookie</label>
+						<label for="garminSession" class="bold">Garmin <code>SESSIONID</code> Cookie</label>
 						<input class="form-control" type="text" name="garminSession" id="garminSession" value="{{.garminSession}}">
 						{{ if .garminSessionE }}<div class="form-control-feedback">It looks like this isn't field is invalid.</div>{{ end }}
-						<small class="form-text text-muted">Find this on <a rel="noopener noreferrer" target="_blank" href="http://connect.garmin.com">Garmin Connect</a> (eg: <code>59123-...</code>).</small>
-					</div>
-					<div class="form-group {{ if .garminPinME }} has-danger {{ end }}">
-						<label for="garminPinM" class="bold">Garmin <code>pin.m</code> Cookie</label>
-						<input class="form-control" type="text" name="garminPinM" id="garminPinM" value="{{.garminPinM}}">
-						{{ if .garminPinME }}<div class="form-control-feedback">It looks like this isn't field is invalid.</div>{{ end }}
-						<small class="form-text text-muted">Find this on <a rel="noopener noreferrer" target="_blank" href="http://connect.garmin.com">Garmin Connect</a> (eg: <code>55abc...</code>).</small>
+						<small class="form-text text-muted">Find this on <a rel="noopener noreferrer" target="_blank" href="http://connect.garmin.com">Garmin Connect</a> under domain <i>connect.garmin.com</i> (eg: <code>59123-...</code>).</small>
 					</div>
 					<div class="form-group {{ if .mapmyrunAuthTokenE }} has-danger {{ end }}">
 						<label for="mapmyrunAuthToken" class="bold">MapMyRun <code>auth-token</code> Cookie</label>
 						<input class="form-control" type="text" name="mapmyrunAuthToken" id="mapmyrunAuthToken" value="{{.mapmyrunAuthToken}}">
 						{{ if .mapmyrunAuthTokenE }}<div class="form-control-feedback">It looks like this isn't field is invalid.</div>{{ end }}
-						<small class="form-text text-muted">Find this on <a rel="noopener noreferrer" target="_blank" href="http://mapmyrun.com">MapMyRun</a> (eg: <code>US.123...</code>).</small>
+						<small class="form-text text-muted">Find this on <a rel="noopener noreferrer" target="_blank" href="http://mapmyrun.com">MapMyRun</a> under domain <i>mapmyrun.com</i> (eg: <code>US.123...</code>).</small>
 					</div>
 					<div class="form-group {{ if .mapmyrunIDE }} has-danger {{ end }}">
 						<label for="mapmyrunIDE" class="bold">MapMyRun Route ID</label>
@@ -101,7 +95,6 @@ func NewRouteForm(ss sessions.Store) http.HandlerFunc {
 			delete(session.Values, "mapmyrunIDE")
 			delete(session.Values, "mapmyrunAuthTokenE")
 			delete(session.Values, "garminSessionE")
-			delete(session.Values, "garminPinME")
 		}
 		delete(session.Values, "isRedirect")
 		session.Save(r, w)
@@ -116,8 +109,6 @@ func NewRouteForm(ss sessions.Store) http.HandlerFunc {
 			"mapmyrunIDE":        session.Values["mapmyrunIDE"],
 			"garminSession":      session.Values["garminSession"],
 			"garminSessionE":     session.Values["garminSessionE"],
-			"garminPinM":         session.Values["garminPinM"],
-			"garminPinME":        session.Values["garminPinME"],
 		})
 	}
 }
@@ -147,7 +138,6 @@ func PostRouteForm(ss sessions.Store) http.HandlerFunc {
 		delete(session.Values, "mapmyrunIDE")
 		delete(session.Values, "mapmyrunAuthTokenE")
 		delete(session.Values, "garminSessionE")
-		delete(session.Values, "garminPinME")
 
 		mapmyrunID := r.PostForm.Get("mapmyrunID")
 		mapmyrunRouteID, err := strconv.Atoi(mapmyrunID)
@@ -171,20 +161,13 @@ func PostRouteForm(ss sessions.Store) http.HandlerFunc {
 			session.Values["garminSessionE"] = true
 		}
 
-		garminPinM := r.PostForm.Get("garminPinM")
-		session.Values["garminPinM"] = garminPinM
-		if garminPinM == "" {
-			hadError = true
-			session.Values["garminPinME"] = true
-		}
-
 		if hadError {
 			return
 		}
 
 		fmt.Printf("[post-route-form.info] Attempting import of mapmyrun.route=%d\n", mapmyrunRouteID)
 
-		garminClient := garmin.New().SetCookieSession(garminSession).SetCookiePinM(garminPinM)
+		garminClient := garmin.New().SetCookieSession(garminSession)
 		mapmyrunClient := underarmour.New().SetCookieAuthToken(mapmyrunAuthToken)
 		route, err := mapmyrunClient.ReadRoute(mapmyrunRouteID)
 		if err != nil {

@@ -22,7 +22,6 @@ type Client struct {
 	rootURI string
 	cookie  struct {
 		session string
-		pinM    string
 	}
 	accessToken string // TODO
 }
@@ -33,17 +32,12 @@ func New() *Client {
 		rootURI = DefaultRootURI
 	}
 	cookieSession := os.Getenv(envVarPrefix + "_COOKIE_SESSION")
-	cookiePinM := os.Getenv(envVarPrefix + "_COOKIE_PIN_M")
 	c := &Client{}
-	return c.SetRootURI(rootURI).SetCookieSession(cookieSession).SetCookiePinM(cookiePinM)
+	return c.SetRootURI(rootURI).SetCookieSession(cookieSession)
 }
 
 func (c *Client) SetCookieSession(cookieSession string) *Client {
 	c.cookie.session = cookieSession
-	return c
-}
-func (c *Client) SetCookiePinM(cookiePinM string) *Client {
-	c.cookie.pinM = cookiePinM
 	return c
 }
 func (c *Client) SetRootURI(rootURI string) *Client {
@@ -52,9 +46,6 @@ func (c *Client) SetRootURI(rootURI string) *Client {
 }
 func (c *Client) GetCookieSession() string {
 	return c.cookie.session
-}
-func (c *Client) GetCookiePinM() string {
-	return c.cookie.pinM
 }
 func (c *Client) GetRootURI() string {
 	return c.rootURI
@@ -69,11 +60,7 @@ func (c *Client) doWithResponse(req *http.Request) (*http.Response, error) {
 	if c.cookie.session == "" {
 		return nil, fmt.Errorf("missing cookie.session for request")
 	}
-	req.AddCookie(&http.Cookie{Name: "SESSION", Value: c.cookie.session})
-	if c.cookie.pinM == "" {
-		return nil, fmt.Errorf("missing cookie.pinM for request")
-	}
-	req.AddCookie(&http.Cookie{Name: "pin.m", Value: c.cookie.pinM})
+	req.AddCookie(&http.Cookie{Name: "SESSIONID", Value: c.cookie.session})
 	req.Header.Set("Accept", "application/json, text/javascript, */*; q=0.01")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("NK", "NT")
