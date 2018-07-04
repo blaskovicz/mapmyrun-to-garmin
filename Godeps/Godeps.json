@@ -77,6 +77,11 @@
 			"Rev": "c93804873f99672c0c8f6af17b7b51f316074dc5"
 		},
 		{
+			"ImportPath": "github.com/sirupsen/logrus",
+			"Comment": "v1.0.3-11-g89742ae",
+			"Rev": "89742aefa4b206dcf400792f3bd35b542998eb3b"
+		},
+		{
 			"ImportPath": "github.com/ziutek/mymysql/godrv",
 			"Comment": "v1.5.4-25-g1d19cbf",
 			"Rev": "1d19cbf98d83564cc561192ae7d7183d795f7ac7"
@@ -92,6 +97,10 @@
 			"Rev": "1d19cbf98d83564cc561192ae7d7183d795f7ac7"
 		},
 		{
+			"ImportPath": "golang.org/x/crypto/ssh/terminal",
+			"Rev": "9ba3862cf6a5452ae579de98f9364dd2e544844c"
+		},
+		{
 			"ImportPath": "golang.org/x/net/html",
 			"Rev": "0744d001aa8470aaa53df28d32e5ceeb8af9bd70"
 		},
@@ -102,6 +111,14 @@
 		{
 			"ImportPath": "golang.org/x/net/html/charset",
 			"Rev": "0744d001aa8470aaa53df28d32e5ceeb8af9bd70"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "a5054c7c1385fd50d9394475365355a87a7873ec"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows",
+			"Rev": "a5054c7c1385fd50d9394475365355a87a7873ec"
 		},
 		{
 			"ImportPath": "golang.org/x/text/encoding",
