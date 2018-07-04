@@ -27,6 +27,8 @@ var t = template.Must(template.New("route_form.tmpl").Parse(`
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<style>label.bold{font-weight:bold}</style>
+	<script type="text/javascript"> var infolinks_pid = 3108833; var infolinks_wsid = 0; </script>
+	<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
 </head>
 <body>
 	<div class="jumbotron">
