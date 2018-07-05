@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ConvertHomepage />
+    <footer class="footer">
+      <b-container>
+        <b-row>
+          <b-col>
+            <p class="text-muted">Questions or Concerns? Check out my <a rel="noopener noreferrer" href="https://github.com/blaskovicz/mapmyrun-to-garmin" target="_blank">Github</a> repo.
+            </p>
+          </b-col>
+        </b-row>
+      </b-container>
+    </footer>
   </div>
+       
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+
+Vue.use(BootstrapVue);
+
+import ConvertHomepage from "./components/ConvertHomepage.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    ConvertHomepage
   }
 };
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+footer {
+  margin-top: 10px;
 }
 </style>

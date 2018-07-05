@@ -3,11 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "vue-cli-service serve",
+    "start:api": "go run ./cmd/web/main.go",
     "serve": "vue-cli-service serve",
+    "serve:api": "go run ./cmd/web/main.go",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build:api": "go build -o mapmyrun-to-garmin ./cmd/web/main.go",
+    "lint": "vue-cli-service lint",
+    "heroku-postbuild": "yarn build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "url-join": "^4.0.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {

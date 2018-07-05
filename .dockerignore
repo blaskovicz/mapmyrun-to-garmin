@@ -4,3 +4,4 @@
 /Procfile
 /*.md
 /Makefile
+/.env*

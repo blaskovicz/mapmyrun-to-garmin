@@ -1,7 +1,14 @@
-FROM golang:1.9
+FROM golang:1.9 as gobuild
 WORKDIR /go/src/github.com/blaskovicz/mapmyrun-to-garmin
 COPY . .
 RUN go-wrapper install ./...
+
+FROM node:8.11
+WORKDIR /go/src/github.com/blaskovicz/mapmyrun-to-garmin
+COPY --from=gobuild /go/src/github.com/blaskovicz/mapmyrun-to-garmin .
+COPY --from=gobuild /go/bin .
+RUN yarn install && yarn build
+
 EXPOSE 3091
-ENV ENVIRONMENT=production PORT=3091 COOKIE_KEY=test-key CSRF_KEY=test-key-2
-CMD ["web"]
+ENV PORT=3091
+CMD ["./web"]

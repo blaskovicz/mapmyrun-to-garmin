@@ -33,6 +33,11 @@
 			"Rev": "8aae08ff9fb9a8fe293deea3d057f37d89744670"
 		},
 		{
+			"ImportPath": "github.com/gorilla/handlers",
+			"Comment": "v1.3.0-4-g13a38d2",
+			"Rev": "13a38d26174b16d5b4bf6f1094c1389ec9879572"
+		},
+		{
 			"ImportPath": "github.com/gorilla/mux",
 			"Comment": "v1.5.0-1-g3f19343",
 			"Rev": "3f19343c7d9ce75569b952758bd236af94956061"
